@@ -1,6 +1,7 @@
 'use strict';
 
 let timer = 25 * 60 * 1000;
+let targetTime;
 let paused = true;
 let taskmode = true;
 
@@ -69,11 +70,12 @@ function OptionalZero(time)
 }
 
 function TimerFunction(){
-    timer -= 250;
-    timeLabel.textContent = formatTimerText(timer);
+    const currentTime = targetTime - new Date().getTime();
+    timeLabel.textContent = formatTimerText(currentTime);
 
-    if(timer <= 0)
+    if(currentTime <= 0)
     {
+        timeLabel.textContent = formatTimerText(0);
         StopTimer();
 
         inputView.className = "invisible";
@@ -88,6 +90,7 @@ function StopTimer()
 {
     paused = true;
     pauser.textContent = "Play"
+    timer = targetTime - new Date().getTime();
     clearInterval(timerfunctionId);
 }
 
@@ -95,7 +98,8 @@ function StartTimer()
 {
     paused = false;
     pauser.textContent = "Pause"
-    timerfunctionId = setInterval(TimerFunction, 250);
+    targetTime = new Date().getTime() + timer;
+    timerfunctionId = setInterval(TimerFunction, 500);
 }
 
 function ResetTimer()
