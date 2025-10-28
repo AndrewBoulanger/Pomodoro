@@ -1,0 +1,60 @@
+ :root {
+  --green: #00FF00;
+  --white: #FFFFFF;
+  --black: #000000;
+
+  --text-color: var(--white);
+}
+ 
+ body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+button {
+
+    top: 10px;
+    left: 20px;
+    height: 30px;
+    width: 75px;
+    margin-right: 10px;
+    position: relative;
+
+}
+
+h3{
+    position:relative;
+    left: 25px;
+    color: var(--text-color);
+}
+
+.displayText {
+    font-size: xx-large;
+    position: relative;
+    left: 50px;
+    color: var(--text-color);
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.mainText{
+    animation: none;
+}
+
+.mainTextBlinking{
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

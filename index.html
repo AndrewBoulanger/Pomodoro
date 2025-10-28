@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <div class = mainText>
+    <h3 id="mode" class = "modeText">Task time left:</h3>
+    <p id="timer" class ="displayText">0:30:00</p>
+    </div>
+
+    <div id = "inputView" class="visible">
+        <div>
+            <button id ="pauser" class="pauseBtn">Play</button>
+            <button id = "resetter" class="resetBtn">Reset</button>
+        </div>
+
+        <div>
+            <br>
+            <div>
+                <br>
+                <label for="taskTime">Task duration (minutes):</label>
+                <input
+                type="number"
+                class = "taskInput"
+                id="taskTime"
+                name="taskTime"
+                required
+                min="0"
+                max="1440">
+            </div>
+            <div>
+                <br>
+                <label for="breakTime">Break duration (minutes):</label>
+                <input
+                type="number"
+                class = "breakInput"
+                id="breakTime"
+                name="breakTime"
+                required
+                min="0"
+                max="60">
+            </div>
+        </div>
+    </div>
+
+    <div id = "timerDoneView" class="invisible">
+        <h2>Timer finished</h2>
+        <p>click to continue</p>
+    </div>
+
+    <audio loop> 
+        <source src="subTri_4c.wav" type = "audio/wav"></source> >
+    </audio>
+    
+<script src="app.js"></script>
+<noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+</html>
