@@ -106,6 +106,6 @@ function ResetTimer()
 {
     let timerToGet = taskmode ? "taskTime" : "breakTime";
     timer = document.getElementById(timerToGet).value * 60 * 1000
-    modeLabel.textContent = taskmode ? "Task time left:" : "Break time left";
+    modeLabel.textContent = taskmode ? "Task time left:" : "Break time left:";
     timeLabel.textContent = formatTimerText(timer);
 }
