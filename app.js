@@ -71,7 +71,9 @@ function OptionalZero(time)
 
 function TimerFunction(){
     const currentTime = targetTime - new Date().getTime();
-    timeLabel.textContent = formatTimerText(currentTime);
+    const timeString = formatTimerText(currentTime);
+    timeLabel.textContent = timeString;
+    document.title = "Pomodoro " + timeString;
 
     if(currentTime <= 0)
     {
@@ -92,6 +94,7 @@ function StopTimer()
     pauser.textContent = "Play"
     timer = targetTime - new Date().getTime();
     clearInterval(timerfunctionId);
+    document.title = "Pomodoro "
 }
 
 function StartTimer()
