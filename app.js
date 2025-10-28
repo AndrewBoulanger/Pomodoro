@@ -69,7 +69,7 @@ function OptionalZero(time)
 }
 
 function TimerFunction(){
-    timer -= 1000;
+    timer -= 250;
     timeLabel.textContent = formatTimerText(timer);
 
     if(timer <= 0)
@@ -95,7 +95,7 @@ function StartTimer()
 {
     paused = false;
     pauser.textContent = "Pause"
-    timerfunctionId = setInterval(TimerFunction, 1000);
+    timerfunctionId = setInterval(TimerFunction, 250);
 }
 
 function ResetTimer()
