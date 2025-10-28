@@ -21,6 +21,9 @@ const mainText = document.querySelector('.mainText');
 
 addEventListener("load", (event) => {
     timer = document.getElementById("taskTime").value * 60 * 1000;
+    if(timer == "") {
+        timer = 25 * 60 * 1000;
+    }
     timeLabel.textContent = formatTimerText(timer);
 })
 
