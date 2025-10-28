@@ -26,6 +26,7 @@ addEventListener("load", (event) => {
         timer = 25 * 60 * 1000;
     }
     timeLabel.textContent = formatTimerText(timer);
+    document.title = "Pomodoro";
 })
 
 pauser?.addEventListener('click', function(){
@@ -73,7 +74,7 @@ function TimerFunction(){
     const currentTime = targetTime - new Date().getTime();
     const timeString = formatTimerText(currentTime);
     timeLabel.textContent = timeString;
-    document.title = "Pomodoro " + timeString;
+    document.title = timeString + " pomodoro";
 
     if(currentTime <= 0)
     {
